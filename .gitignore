@@ -1,0 +1,14 @@
+ipse Project Files
+.metadata
+.project
+.classpath
+.settings/
+
+# Build and Compiled Files
+build/
+target/
+*.class
+
+# OS generated files
+.DS_Store
+Thumbs.db
