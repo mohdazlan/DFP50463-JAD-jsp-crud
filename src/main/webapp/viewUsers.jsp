@@ -39,7 +39,9 @@
 			<td><%=rs.getString("fullname")%></td>
 			<td><%=rs.getString("email")%></td>
 			<td><%=rs.getString("password")%></td>
-			<td><a href="deleteUser.jsp?id=<%=user_id%>">Delete</a></td>
+			<td><a href="deleteUser.jsp?id=<%=user_id%>">Delete</a>
+			<a href="editUser.jsp?id=<%=user_id%>">Edit</a>
+			</td>
 		</tr>
 		<%
 		}
