@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@page import="java.sql.*"%>
+     <%@ include file="stefanie.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,19 +16,17 @@ String fname = request.getParameter("fName");
 String email = request.getParameter("emel");
 String password = request.getParameter("passcode");
 
-String dbURL="jdbc:mysql://localhost:3306/crud_db";
-String dbUser="root";
-String dbPass="";
+ 
 String sql = "UPDATE users SET username=?,fullname=?,email=?,password=? WHERE id=?";
 try{
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	Connection conn = DriverManager.getConnection(dbURL,dbUser,dbPass);
 	PreparedStatement ps = conn.prepareStatement(sql);
-	ps.setInt(1, Integer.parseInt(id));
+	ps.setInt(5, Integer.parseInt(id));
 	ps.setString(2, uname);
 	ps.setString(3, fname);
 	ps.setString(4, email);
-	ps.setString(5, password);
+	ps.setString(1, password);
 	ps.executeUpdate();
 	ps.close();
 	conn.close();

@@ -2,6 +2,7 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+      <%@ include file="stefanie.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +12,7 @@
 <body>
 <% 
 String uid = request.getParameter("id");
- 
-String dbURL="jdbc:mysql://localhost:3306/crud_db";
-String dbUser="root";
-String dbPass="";
-
+  
 try{
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	Connection conn = DriverManager.getConnection(dbURL,dbUser,dbPass);

@@ -4,6 +4,7 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ include file="dbConfig.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +15,7 @@
 <%
 String Username = request.getParameter("username");
 String Password = request.getParameter("password");
-
-String dbURL="jdbc:mysql://localhost:3306/crud_db";
-String dbUser ="root";
-String dbPass ="";
+ 
 
 boolean authenticated = false;
 try {
@@ -31,6 +29,7 @@ try {
 	if(rs.next()){
 		rs.close();
 		ps.close();
+		session.setAttribute("namapengguna", Username);
 		response.sendRedirect("index.jsp");
 	} else {
 		response.sendRedirect("error.jsp");

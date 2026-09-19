@@ -1,14 +1,12 @@
-ipse Project Files
-.metadata
+# Eclipse IDE files
+.settings/
 .project
 .classpath
-.settings/
-
-# Build and Compiled Files
+bin/
 build/
 target/
-*.class
 
 # OS generated files
 .DS_Store
 Thumbs.db
+*.log
